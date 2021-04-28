@@ -1,0 +1,19 @@
+{
+  "name": "polytech-new-html",
+  "version": "1.0.0",
+  "description": "POLYTECH-NEW-HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oww1220/POLYTECH-NEW-HTML.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oww1220/POLYTECH-NEW-HTML/issues"
+  },
+  "homepage": "https://github.com/oww1220/POLYTECH-NEW-HTML#readme"
+}
