@@ -25,6 +25,17 @@
 
     #section1 {
         padding-top: 170px;
+        background-color: #61bcf3;
+        .bg {
+            @include Background(
+                $sprite: 'section1-bg2',
+                $type: 'jpg',
+                $position: center center,
+                $size: contain,
+                $path: 'bg'
+            );
+            height: 100%;
+        }
         .scroll-down {
             @include Position($bottom: 20px, $left: 50%);
             animation: slide-top 0.5s linear infinite alternate both;
@@ -33,7 +44,18 @@
 
     #section2 {
         .inner {
-            //@include Flex-config($justify: center, $align: center);
+            &:before {
+                display: block;
+                content: '';
+                width: 300px;
+                height: 300px;
+                @include Background($sprite: 'rollin', $position: center center, $size: cover, $path: 'bg');
+                @include Position($top: 20px, $left: 0px);
+                animation: rotate-center 20s linear infinite both;
+            }
+            img {
+                position: relative;
+            }
         }
     }
 

@@ -6,3 +6,12 @@
         transform: translateY(-20px);
     }
 }
+
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
