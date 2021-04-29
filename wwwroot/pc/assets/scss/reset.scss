@@ -207,32 +207,6 @@ input::placeholder {
 textarea::placeholder {
     color: #c1c1c1;
 }
-//Spoqa
-@font-face {
-    font-family: 'SpoqaL';
-    src: url('../fonts/Spoqa/Spoqa-Light.woff') format('woff'), url('../fonts/Spoqa/Spoqa-Light.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SpoqaB';
-    src: url('../fonts/Spoqa/Spoqa-Bold.woff') format('woff'), url('../fonts/Spoqa/Spoqa-Bold.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SpoqaR';
-    src: url('../fonts/Spoqa/Spoqa-Regular.woff') format('woff'),
-        url('../fonts/Spoqa/Spoqa-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SpoqaT';
-    src: url('../fonts/Spoqa/Spoqa-Thin.woff') format('woff'), url('../fonts/Spoqa/Spoqa-Thin.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
 
 //Noto
 @font-face {
@@ -258,52 +232,6 @@ textarea::placeholder {
 @font-face {
     font-family: 'NotoB';
     src: url('../fonts/Noto/notokr-bold.woff') format('woff'), url('../fonts/Noto/notokr-bold.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-//Manrope
-@font-face {
-    font-family: 'ManropeL';
-    src: url('../fonts/Manrope/Manrope-Light.woff') format('woff'),
-        url('../fonts/Manrope/Manrope-Light.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ManropeB';
-    src: url('../fonts/Manrope/Manrope-Bold.woff') format('woff'),
-        url('../fonts/Manrope/Manrope-Bold.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-//Spoqa
-@font-face {
-    font-family: 'SpoqaHanSansL';
-    src: url('../fonts/Spoqa/SpoqaHanSans-Light.woff') format('woff'),
-        url('../fonts/Spoqa/SpoqaHanSans-Light.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SpoqaHanSansB';
-    src: url('../fonts/Spoqa/SpoqaHanSans-Bold.woff') format('woff'),
-        url('../fonts/Spoqa/SpoqaHanSans-Bold.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SpoqaHanSansR';
-    src: url('../fonts/Spoqa/SpoqaHanSans-Regular.woff') format('woff'),
-        url('../fonts/Spoqa/SpoqaHanSans-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'SpoqaHanSansT';
-    src: url('../fonts/Spoqa/SpoqaHanSans-Thin.woff') format('woff'),
-        url('../fonts/Spoqa/SpoqaHanSans-Thin.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }

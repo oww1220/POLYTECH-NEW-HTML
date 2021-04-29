@@ -28,3 +28,16 @@
 .footer {
     background-color: #464646;
 }
+
+.fixedRight {
+    @include Position($position: fixed, $bottom: 85px, $right: 85px);
+    > ul {
+        li {
+            a {
+                @include Flex-config($justify: center, $align: center);
+                width: 65px;
+                height: 65px;
+            }
+        }
+    }
+}
