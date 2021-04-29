@@ -38,6 +38,7 @@
         .scroll-down {
             transform: translateY(1000px);
             opacity: 0;
+            animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
             @include Flex-config($justify: center, $align: center, $flow: column);
             &:before {
                 @include Background($sprite: 'scroll_down', $position: center center, $path: 'bg');
