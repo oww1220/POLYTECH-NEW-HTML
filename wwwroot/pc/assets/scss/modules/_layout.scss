@@ -31,13 +31,70 @@
 
 .fixedRight {
     @include Position($position: fixed, $bottom: 85px, $right: 85px);
+    @include Flex-config($justify: center, $align: flex-end, $flow: column);
+    transform: translateY(85px);
+    transition: transform 0.2s;
     > ul {
+        @include Flex-config($justify: center, $align: flex-end, $flow: column);
         li {
+            margin-bottom: 10px;
             a {
+                position: relative;
                 @include Flex-config($justify: center, $align: center);
+                transition: width 0.5s, border-radius 0.25s;
+                background-color: #bbbbbb;
+                color: #fff;
+                border-radius: 100%;
                 width: 65px;
                 height: 65px;
+                span {
+                    @include Position($bottom: 50%, $left: 0);
+                    margin-bottom: -10px;
+                    text-align: center;
+                    width: 100%;
+                    color: #fff;
+                    opacity: 1;
+                    transition: opacity 0.5s;
+                }
+                strong {
+                    @include Position($bottom: 50%, $left: 100px);
+                    margin-bottom: -10px;
+                    width: 100%;
+                    color: #fff;
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                }
+                &:hover {
+                    background-color: #24a9ee;
+                    width: 1000px;
+                    border-radius: 40px;
+                    justify-content: flex-start;
+                    strong {
+                        opacity: 1;
+                        margin-left: 100px;
+                    }
+                    span {
+                        opacity: 0;
+                    }
+                }
             }
+        }
+    }
+    .btn-goTop {
+        @include Flex-config($justify: center, $align: center);
+        @include Background($sprite: 'bt-top', $position: center center);
+        @include Hide_txt;
+        transition: opacity 0.2s, transform 0.2s;
+        transform: scale(0);
+        opacity: 0;
+        width: 65px;
+        height: 65px;
+    }
+    &.active {
+        transform: translateY(0);
+        .btn-goTop {
+            transform: scale(1);
+            opacity: 1;
         }
     }
 }

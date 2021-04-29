@@ -4,6 +4,10 @@ export {};
 
 // ---- test code ---- //
 $(() => {
+    const $fullpage = $('#fullpage');
+    const $btnTop = $('.fixedRight');
+    const $header = $('.header');
+
     const fullpageOptions = {
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
@@ -13,20 +17,25 @@ $(() => {
         navigationPosition: 'left',
         //navigationTooltips: ['INTRO', 'HIT소식', 'WHY HIT', 'HIT 생활', 'HIT SNS'],
         responsiveWidth: 1200,
-        afterLoad: function () {
+        afterLoad() {
             $('.fp-table.active').addClass('loaded');
         },
-        onLeave: function (index: number, nextIndex: number, direction: string) {
-            //console.log('index:', nextIndex);
+        onLeave(index: number, nextIndex: number, direction: string) {
             if (nextIndex === 1) {
-                $('.header').fadeIn();
+                $header.fadeIn();
+                $btnTop.removeClass('active');
             } else {
-                $('.header').fadeOut();
+                $header.fadeOut();
+                $btnTop.addClass('active');
             }
         },
     };
 
-    $('#fullpage').fullpage(fullpageOptions);
+    $fullpage.fullpage(fullpageOptions);
+
+    $btnTop.find('.btn-goTop').on('click', () => {
+        $.fn.fullpage.moveTo(1, 1);
+    });
 
     //ie test es6 method!
     /*
