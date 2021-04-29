@@ -36,7 +36,8 @@
             height: 100%;
         }
         .scroll-down {
-            animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+            transform: translateY(1000px);
+            opacity: 0;
             @include Flex-config($justify: center, $align: center, $flow: column);
             &:before {
                 @include Background($sprite: 'scroll_down', $position: center center, $path: 'bg');
@@ -70,6 +71,11 @@
                 position: relative;
                 z-index: 1;
                 color: #fff;
+            }
+        }
+        &.active {
+            .scroll-down {
+                animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
             }
         }
         .fp-tableCell {
