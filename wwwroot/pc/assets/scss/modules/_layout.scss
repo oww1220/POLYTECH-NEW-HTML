@@ -14,7 +14,7 @@
     min-width: 1920px;
 }
 .header {
-    //@include Position($position: fixed, $top: 0, $left: 0);
+    @include Position($position: fixed, $top: 0, $left: 0);
     width: 100%;
     min-width: 1920px;
     background-color: #fff;
