@@ -39,6 +39,10 @@
             @include Position($bottom: 20px, $left: 50%);
             animation: slide-top 0.5s linear infinite alternate both;
         }
+        .fp-tableCell {
+            padding-top: 170px;
+            box-sizing: border-box;
+        }
     }
 
     #section2 {
