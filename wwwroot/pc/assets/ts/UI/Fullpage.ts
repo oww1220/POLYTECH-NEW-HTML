@@ -3,6 +3,25 @@ import * as Const from '../Lib/Const';
 
 // ---- test code ---- //
 $(() => {
+    const fullpageOptions = {
+        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        menu: '#menu',
+        lazyLoad: true,
+        autoScrolling: true,
+        navigation: true,
+        navigationPosition: 'left',
+        //navigationTooltips: ['INTRO', 'HIT소식', 'WHY HIT', 'HIT 생활', 'HIT SNS'],
+        verticalCentered: true,
+        responsiveWidth: 1200,
+        afterLoad: function () {
+            $('.fp-table.active').addClass('focus');
+            $('.fp-table.active').addClass('loaded');
+        },
+    };
+
+    const fullpageInstance = new fullpage('#fullpage', fullpageOptions);
+
     //ie test es6 method!
 
     console.log('TOUCH_EVENT', Const.TOUCH_EVENT);

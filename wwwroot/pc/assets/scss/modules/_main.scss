@@ -1,77 +1,48 @@
-.cont00 {
-    width: 600px !important;
-    @include Flex-config($wrap: wrap);
-    li {
-        width: 50% !important;
+.main-wrap {
+    img {
+        width: 100%;
     }
-    &:after {
-        @include Background($sprite: 'arr_lf_8', $position: right center);
-        display: block;
-        content: '';
-        width: 20px;
-        height: 20px;
+    .section {
+        position: relative;
+        overflow: hidden;
     }
-}
-.cont01 {
-    height: 200px;
-    @include Flex-config($justify: center, $align: center);
-}
-.cont01-2 {
-    height: 200px;
-    @include Flex-config($align: center);
-}
-.cont01-3 {
-    height: 200px;
-    @include Flex-config();
-}
-.cont01-4 {
-    height: 200px;
-    @include Flex-config($justify: flex-end, $align: center);
-}
-.cont01-5 {
-    height: 200px;
-    @include Flex-config($justify: center);
-}
-.cont01-6 {
-    height: 200px;
-    @include Flex-config($justify: center, $align: flex-end);
-}
-.cont01-7 {
-    height: 200px;
-    @include Flex-config($justify: space-between);
-}
-.cont01-8 {
-    height: 200px;
-    @include Flex-config($justify: space-between, $align: center);
-}
-.cont01-9 {
-    height: 200px;
-    @include Flex-config($justify: space-between, $align: flex-end);
-}
-.cont01-10 {
-    height: 200px;
-    @include Flex-config($justify: space-around);
-}
+    .section .layout {
+        opacity: 0;
+        transform: translate3d(0, -200px, 0);
+        transition: all 2s ease;
+    }
+    .section.active .layout {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 
-.cont02 {
-    height: 300px;
-    @include Flex-config($justify: center, $align: center, $flow: column);
-}
-.cont03 {
-    height: 300px;
-    @include Flex-config($align: center, $flow: column);
-}
-.cont04 {
-    height: 300px;
-    @include Flex-config($flow: column);
-}
+    #section1 {
+        .scroll-down {
+            @include Position($bottom: 20px, $left: 50%);
+            animation: slide-top 0.5s linear infinite alternate both;
+        }
+    }
 
-.cont05 {
-    height: 300px;
-    @include Flex-config($display: inline-flex);
-}
+    #section2 {
+        padding: 100px 0;
+        .inner {
+            text-align: center;
+            img {
+                max-width: 100%;
+                width: auto;
+            }
+        }
+    }
 
-.cont06 {
-    height: 300px;
-    @include Flex-config($display: inline-flex, $align: center);
+    #section3 {
+        @include Background($sprite: 'section3-bg', $type: 'jpg', $position: center center, $size: cover, $path: 'bg');
+        padding: 100px 0;
+        .inner {
+            text-align: center;
+            img {
+                max-width: 100%;
+                width: auto;
+            }
+        }
+    }
 }
