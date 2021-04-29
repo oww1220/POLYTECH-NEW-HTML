@@ -1,0 +1,77 @@
+.cont00 {
+    width: 600px !important;
+    @include Flex-config($wrap: wrap);
+    li {
+        width: 50% !important;
+    }
+    &:after {
+        @include Background($sprite: 'arr_lf_8', $position: right center);
+        display: block;
+        content: '';
+        width: 20px;
+        height: 20px;
+    }
+}
+.cont01 {
+    height: 200px;
+    @include Flex-config($justify: center, $align: center);
+}
+.cont01-2 {
+    height: 200px;
+    @include Flex-config($align: center);
+}
+.cont01-3 {
+    height: 200px;
+    @include Flex-config();
+}
+.cont01-4 {
+    height: 200px;
+    @include Flex-config($justify: flex-end, $align: center);
+}
+.cont01-5 {
+    height: 200px;
+    @include Flex-config($justify: center);
+}
+.cont01-6 {
+    height: 200px;
+    @include Flex-config($justify: center, $align: flex-end);
+}
+.cont01-7 {
+    height: 200px;
+    @include Flex-config($justify: space-between);
+}
+.cont01-8 {
+    height: 200px;
+    @include Flex-config($justify: space-between, $align: center);
+}
+.cont01-9 {
+    height: 200px;
+    @include Flex-config($justify: space-between, $align: flex-end);
+}
+.cont01-10 {
+    height: 200px;
+    @include Flex-config($justify: space-around);
+}
+
+.cont02 {
+    height: 300px;
+    @include Flex-config($justify: center, $align: center, $flow: column);
+}
+.cont03 {
+    height: 300px;
+    @include Flex-config($align: center, $flow: column);
+}
+.cont04 {
+    height: 300px;
+    @include Flex-config($flow: column);
+}
+
+.cont05 {
+    height: 300px;
+    @include Flex-config($display: inline-flex);
+}
+
+.cont06 {
+    height: 300px;
+    @include Flex-config($display: inline-flex, $align: center);
+}

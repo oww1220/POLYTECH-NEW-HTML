@@ -1,0 +1,30 @@
+
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jquery": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "prettier"
+    ],
+    "plugins": ["prettier"],
+    "settings": {
+        "react": {
+        "version": "detect"
+        }
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "no-unused-vars": 1
+    },
+    "globals": {
+        "IScroll": true,
+        "Swiper": true,
+        "CommonUI": true
+    }
+}
