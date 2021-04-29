@@ -12,7 +12,6 @@ $(() => {
         navigation: true,
         navigationPosition: 'left',
         //navigationTooltips: ['INTRO', 'HIT소식', 'WHY HIT', 'HIT 생활', 'HIT SNS'],
-        verticalCentered: true,
         responsiveWidth: 1200,
         afterLoad: function () {
             $('.fp-table.active').addClass('focus');

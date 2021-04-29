@@ -5,6 +5,14 @@
     .section {
         position: relative;
         overflow: hidden;
+        .inner {
+            margin-top: 200px;
+            text-align: center;
+            img {
+                max-width: 100%;
+                width: auto;
+            }
+        }
     }
     .section .layout {
         opacity: 0;
@@ -24,25 +32,33 @@
     }
 
     #section2 {
-        padding: 100px 0;
         .inner {
-            text-align: center;
-            img {
-                max-width: 100%;
-                width: auto;
-            }
+            //@include Flex-config($justify: center, $align: center);
         }
     }
 
     #section3 {
         @include Background($sprite: 'section3-bg', $type: 'jpg', $position: center center, $size: cover, $path: 'bg');
-        padding: 100px 0;
         .inner {
-            text-align: center;
-            img {
-                max-width: 100%;
-                width: auto;
+        }
+    }
+    #section4 {
+        @include Background($sprite: 'section4-bg', $type: 'jpg', $position: center center, $size: cover, $path: 'bg');
+        .inner {
+        }
+    }
+    #section5 {
+        background-color: #f4f7fa;
+        .inner {
+            &.layout {
+                opacity: 1;
             }
+        }
+    }
+
+    #footer_section {
+        .inner {
+            margin-top: 0;
         }
     }
 }
