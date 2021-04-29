@@ -4,7 +4,6 @@ import * as Const from '../Lib/Const';
 // ---- test code ---- //
 $(() => {
     const fullpageOptions = {
-        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
         lazyLoad: true,
@@ -19,7 +18,7 @@ $(() => {
         },
     };
 
-    const fullpageInstance = new fullpage('#fullpage', fullpageOptions);
+    $('#fullpage').fullpage(fullpageOptions);
 
     //ie test es6 method!
 
