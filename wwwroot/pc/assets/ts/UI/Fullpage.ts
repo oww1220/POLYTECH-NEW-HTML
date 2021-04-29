@@ -1,5 +1,6 @@
-import CommonUI from '../CommonUI';
-import * as Const from '../Lib/Const';
+//import CommonUI from '../CommonUI';
+//import * as Const from '../Lib/Const';
+export {};
 
 // ---- test code ---- //
 $(() => {
@@ -13,15 +14,22 @@ $(() => {
         //navigationTooltips: ['INTRO', 'HIT소식', 'WHY HIT', 'HIT 생활', 'HIT SNS'],
         responsiveWidth: 1200,
         afterLoad: function () {
-            $('.fp-table.active').addClass('focus');
             $('.fp-table.active').addClass('loaded');
+        },
+        onLeave: function (index: number, nextIndex: number, direction: string) {
+            //console.log('index:', nextIndex);
+            if (nextIndex === 1) {
+                $('.header').fadeIn();
+            } else {
+                $('.header').fadeOut();
+            }
         },
     };
 
     $('#fullpage').fullpage(fullpageOptions);
 
     //ie test es6 method!
-
+    /*
     console.log('TOUCH_EVENT', Const.TOUCH_EVENT);
 
     const aaa = new Promise<number>((resolve, reject) => {
@@ -77,7 +85,5 @@ $(() => {
         console.log('end!!!!!!!!!!!!');
     });
 
-    //(Array.prototype as any).mapToNumbers = function () {
-    ///* ... */
-    //};
+    */
 });

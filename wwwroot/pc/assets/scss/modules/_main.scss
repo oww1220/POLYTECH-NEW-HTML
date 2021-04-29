@@ -24,6 +24,7 @@
     }
 
     #section1 {
+        padding-top: 120px;
         .scroll-down {
             @include Position($bottom: 20px, $left: 50%);
             animation: slide-top 0.5s linear infinite alternate both;
@@ -51,6 +52,9 @@
         .inner {
             &.layout {
                 opacity: 1;
+            }
+            h2 {
+                margin-bottom: 20px;
             }
         }
     }
