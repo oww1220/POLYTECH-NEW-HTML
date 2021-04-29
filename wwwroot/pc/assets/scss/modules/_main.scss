@@ -36,12 +36,47 @@
             height: 100%;
         }
         .scroll-down {
+            animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+            @include Flex-config($justify: center, $align: center, $flow: column);
+            &:before {
+                @include Background($sprite: 'scroll_down', $position: center center, $path: 'bg');
+                animation: slide-top 0.5s linear infinite alternate both;
+                display: block;
+                content: '';
+                width: 20px;
+                height: 30px;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 5px;
+            }
+            &:after {
+                @include Position($top: 0px, $left: 0px);
+                display: block;
+                content: '';
+                background: #0a0a0a;
+                opacity: 0.5;
+                width: 100%;
+                height: 100%;
+            }
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
             @include Position($bottom: 20px, $left: 50%);
-            animation: slide-top 0.5s linear infinite alternate both;
+            span {
+                width: 100%;
+                display: block;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+                color: #fff;
+            }
         }
         .fp-tableCell {
             padding-top: 170px;
             box-sizing: border-box;
+        }
+        .seach-layer {
         }
     }
 
