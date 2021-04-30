@@ -26,15 +26,33 @@
 
         #section1 {
             .siteMap-layer {
+                transition: all 0.5s;
                 transform: translateY(1000px);
                 opacity: 0;
                 animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
-                @include Position($bottom: 0px, $left: 50%);
+                @include Position($bottom: 20px, $left: 50%);
                 margin-left: -725px;
-                @include Background($sprite: 'sitemap', $position: center center, $path: 'bg');
-                height: 160px;
-                width: 1450px;
+                @include Background($sprite: 'sitemap', $position: -23px -23px, $path: 'bg');
+                height: 125px;
+                width: 1400px;
                 z-index: 2;
+                overflow: hidden;
+                border-radius: 20px;
+                &.top {
+                    bottom: 200px;
+                }
+                &.open {
+                    height: 250px;
+                    bottom: 110px;
+                }
+                button {
+                    @include Background($sprite: 'bt-site');
+                    width: 70px;
+                    height: 22px;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -11px;
+                }
             }
             &.active {
                 .siteMap-layer {

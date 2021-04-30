@@ -1,12 +1,14 @@
 import CommonUI from '../CommonUI';
 //import * as Const from '../Lib/Const';
-export {};
+//export {};
 
 // ---- test code ---- //
 $(() => {
     const $fullpage = $('#fullpage');
     const $btnTop = $('.fixedLeft');
     const $header = $('.header');
+    const $siteMapLayer = $('.siteMap-layer');
+    const $scrollDown = $('.scroll-down');
 
     const fullpageOptions = {
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
@@ -30,6 +32,51 @@ $(() => {
             }
         },
     };
+    const openCallback_1: PromiseCallback = (resolve, reject) => {
+        setTimeout(() => {
+            $scrollDown.hide();
+            resolve(true);
+        }, 700);
+    };
+    const openCallback_2: PromiseCallback = (resolve, reject) => {
+        setTimeout(() => {
+            $siteMapLayer.addClass('open');
+            resolve(true);
+        }, 300);
+    };
+    function* openGenerator() {
+        $siteMapLayer.addClass('top');
+        yield CommonUI.async.promise(openCallback_1);
+        yield CommonUI.async.promise(openCallback_2);
+    }
+    const closeCallback_1: PromiseCallback = (resolve, reject) => {
+        setTimeout(() => {
+            $siteMapLayer.removeClass('top');
+            resolve(true);
+        }, 700);
+    };
+    const closeCallback_2: PromiseCallback = (resolve, reject) => {
+        setTimeout(() => {
+            $scrollDown.show();
+            resolve(true);
+        }, 300);
+    };
+    function* closeGenerator() {
+        $siteMapLayer.removeClass('open');
+        yield CommonUI.async.promise(closeCallback_1);
+        yield CommonUI.async.promise(closeCallback_2);
+    }
+
+    const siteMapLayerHandler = function (e: Event) {
+        //console.log($(e.currentTarget!));
+        CommonUI.async.generaterRun(function* () {
+            if ($siteMapLayer.hasClass('open')) {
+                yield* closeGenerator();
+            } else {
+                yield* openGenerator();
+            }
+        });
+    };
 
     $fullpage.fullpage(fullpageOptions);
 
@@ -51,6 +98,8 @@ $(() => {
         effect: 'fade',
         pauseOnHover: false,
     });
+
+    $siteMapLayer.find('button').on('click', siteMapLayerHandler);
 
     //ie test es6 method!
     /*
