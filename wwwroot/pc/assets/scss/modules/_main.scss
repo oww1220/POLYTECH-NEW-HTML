@@ -24,7 +24,14 @@
     }
 
     #section1 {
-        background-color: #61bcf3;
+        #kopo-video {
+            @include Position($top: 50%, $left: 50%);
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 101%;
+            height: auto;
+            width: auto;
+        }
         .bg {
             @include Background(
                 $sprite: 'section1-bg2',
@@ -33,6 +40,7 @@
                 $size: contain,
                 $path: 'bg'
             );
+            background-color: #61bcf3;
             height: 100%;
         }
         .scroll-down {
