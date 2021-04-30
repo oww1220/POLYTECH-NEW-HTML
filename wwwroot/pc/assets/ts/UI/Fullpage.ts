@@ -9,7 +9,6 @@ $(() => {
     const $header = $('.header');
     const $siteMapLayer = $('.siteMap-layer');
     const $scrollDown = $('.scroll-down');
-
     const fullpageOptions = {
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
@@ -67,7 +66,7 @@ $(() => {
         yield CommonUI.async.promise(closeCallback_2);
     }
 
-    const siteMapLayerHandler = function (e: Event) {
+    const siteMapLayerHandler = (e: Event) => {
         //console.log($(e.currentTarget!));
         CommonUI.async.generaterRun(function* () {
             if ($siteMapLayer.hasClass('open')) {

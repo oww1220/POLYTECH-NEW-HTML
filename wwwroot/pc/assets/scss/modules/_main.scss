@@ -207,3 +207,240 @@
         }
     }
 }
+
+.company {
+    .main-wrap {
+        img {
+            width: 100%;
+        }
+        .section {
+            position: relative;
+            overflow: hidden;
+            .inner {
+                text-align: center;
+                img {
+                    max-width: 100%;
+                    width: auto;
+                }
+            }
+        }
+        .section .layout {
+            opacity: 0;
+            transform: translate3d(0, -200px, 0);
+            transition: all 2s ease;
+        }
+        .section.active .layout {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        #section1 {
+            .siteMap-layer {
+                transition: all 0.5s;
+                transform: translateY(1000px);
+                opacity: 0;
+                animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
+                @include Position($bottom: 20px, $left: 50%);
+                margin-left: -725px;
+                @include Background($sprite: 'sitemap', $position: -23px -23px, $path: 'bg');
+                height: 125px;
+                width: 1400px;
+                z-index: 2;
+                overflow: hidden;
+                border-radius: 20px;
+                &.top {
+                    bottom: 200px;
+                }
+                &.open {
+                    height: 250px;
+                    bottom: 110px;
+                }
+                button {
+                    @include Background($sprite: 'bt-site');
+                    width: 70px;
+                    height: 22px;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -11px;
+                }
+            }
+            &.active {
+                .siteMap-layer {
+                    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+                }
+            }
+            .swiper-container {
+                height: 100%;
+                .swiper-wrapper {
+                    height: 100%;
+                    .swiper-slide {
+                        position: relative;
+                        height: 100%;
+                    }
+                }
+            }
+            .swiper-pagination {
+                bottom: auto;
+                top: 10px;
+            }
+            #kopo-video {
+                @include Position($top: 50%, $left: 50%);
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 101%;
+                height: auto;
+                width: auto;
+            }
+            .bg {
+                @include Background(
+                    $sprite: 'section1-bg2',
+                    $type: 'jpg',
+                    $position: center center,
+                    $size: contain,
+                    $path: 'bg'
+                );
+                background-color: #61bcf3;
+                @include Position($top: 50%, $left: 50%);
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 101%;
+                height: auto;
+                width: auto;
+            }
+            .scroll-down {
+                transform: translateY(1000px);
+                opacity: 0;
+                animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
+                @include Flex-config($justify: center, $align: center, $flow: column);
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                overflow: hidden;
+                @include Position($bottom: 170px, $left: 50%);
+                margin-left: -35px;
+                z-index: 1;
+                &:before {
+                    @include Background($sprite: 'scroll_down', $position: center center, $path: 'bg');
+                    animation: slide-top 0.5s linear infinite alternate both;
+                    display: block;
+                    content: '';
+                    width: 20px;
+                    height: 30px;
+                    position: relative;
+                    z-index: 1;
+                }
+                &:after {
+                    @include Position($top: 0px, $left: 0px);
+                    display: block;
+                    content: '';
+                    background: #0a0a0a;
+                    opacity: 0.5;
+                    width: 100%;
+                    height: 100%;
+                }
+                span {
+                    width: 100%;
+                    display: none;
+                    text-align: center;
+                    position: relative;
+                    z-index: 1;
+                    color: #fff;
+                }
+            }
+            &.active {
+                .scroll-down {
+                    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+                }
+            }
+            .fp-tableCell {
+                padding-top: 170px;
+                box-sizing: border-box;
+            }
+            .seach-layer {
+            }
+        }
+
+        #section2 {
+            .inner {
+                &:before {
+                    display: block;
+                    content: '';
+                    width: 300px;
+                    height: 300px;
+                    @include Background($sprite: 'rollin', $position: center center, $size: cover, $path: 'bg');
+                    @include Position($top: 20px, $left: 0px);
+                    animation: rotate-center 20s linear infinite both;
+                }
+                img {
+                    position: relative;
+                }
+            }
+        }
+
+        #section3 {
+            .inner {
+            }
+        }
+        #section4 {
+            @include Background(
+                $sprite: 'section4-bg',
+                $type: 'jpg',
+                $position: center center,
+                $size: cover,
+                $path: 'bg'
+            );
+            .inner {
+            }
+        }
+        #section5 {
+            background-color: #f4f7fa;
+            .inner {
+                &.layout {
+                    opacity: 1;
+                }
+                h2 {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        #footer_section {
+            .inner {
+            }
+        }
+    }
+}
+
+.dasom {
+    .main-wrap {
+        .section {
+            position: relative;
+        }
+        #section1 {
+            &:before {
+                display: block;
+                content: '';
+                width: 50%;
+                height: 745px;
+                @include Position($top: 0, $left: 0);
+                @include Background($sprite: 'dasom-layer1-bg2', $type: 'jpg', $path: 'bg');
+                background-repeat: repeat-x;
+            }
+            &:after {
+                display: block;
+                content: '';
+                width: 50%;
+                height: 745px;
+                @include Position($top: 0, $right: 0);
+                @include Background($sprite: 'dasom-layer1-bg', $type: 'jpg', $path: 'bg');
+                background-repeat: repeat-x;
+            }
+            .inner {
+                z-index: 1;
+            }
+        }
+        #section2 {
+            background-color: #f3f3f3;
+        }
+    }
+}

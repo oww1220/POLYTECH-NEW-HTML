@@ -89,3 +89,169 @@
         }
     }
 }
+
+.company {
+    .inner {
+        max-width: 1600px;
+        margin: 0 auto;
+        position: relative;
+    }
+    #fp-nav {
+        > ul > li {
+            &:last-child {
+                display: none !important;
+            }
+        }
+        &.right {
+            right: 30px;
+            transform: translateY(0);
+        }
+    }
+    #wrap {
+        min-width: 1920px;
+    }
+    .header {
+        @include Position($position: fixed, $top: 0, $left: 0);
+        width: 100%;
+        min-width: 1920px;
+        background-color: #fff;
+        z-index: 10;
+        .inner {
+            max-width: 1700px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        .header-top {
+            background-color: #264876;
+        }
+    }
+
+    .footer {
+        background-color: #464646;
+    }
+
+    .fixedLeft {
+        @include Position($position: fixed, $bottom: 85px, $left: 85px);
+        @include Flex-config($justify: center, $align: flex-end, $flow: column);
+        transform: translateY(85px);
+        transition: transform 0.2s;
+        > ul {
+            @include Flex-config($justify: center, $align: flex-end, $flow: column);
+            li {
+                margin-bottom: 10px;
+                a {
+                    position: relative;
+                    @include Flex-config($justify: center, $align: center);
+                    transition: width 0.5s, border-radius 0.25s;
+                    //background-color: #bbbbbb;
+                    //color: #fff;
+                    //border-radius: 100%;
+                    width: 80px;
+                    height: 80px;
+                }
+                span {
+                    @include Hide_txt;
+                }
+                &.col1 {
+                    @include Background($sprite: 'bt-left01', $position: center center);
+                }
+                &.col2 {
+                    @include Background($sprite: 'bt-left02', $position: center center);
+                }
+                &.col3 {
+                    @include Background($sprite: 'bt-left03', $position: center center);
+                }
+            }
+        }
+        .btn-goTop {
+            @include Flex-config($justify: center, $align: center);
+            @include Background($sprite: 'bt-top', $position: center center);
+            @include Hide_txt;
+            transition: opacity 0.2s, transform 0.2s;
+            transform: scale(0);
+            opacity: 0;
+            width: 80px;
+            height: 65px;
+        }
+        &.active {
+            transform: translateY(0);
+            .btn-goTop {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.dasom {
+    .inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .header {
+        min-width: 1920px;
+        &:before {
+            display: block;
+            content: '';
+            width: 50%;
+            height: 148px;
+            @include Position($top: 0, $left: 0);
+            background-color: #cbe8f6;
+        }
+        &:after {
+            display: block;
+            content: '';
+            width: 50%;
+            height: 148px;
+            @include Position($top: 0, $right: 0);
+            background-color: #daeef7;
+        }
+        .inner {
+            position: relative;
+            z-index: 1;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    #wrap {
+        min-width: 1920px;
+    }
+    .footer {
+        @include Background($sprite: 'footer-bg', $type: 'jpg', $path: 'bg');
+        background-repeat: repeat-x;
+        min-width: 1920px;
+        text-align: center;
+    }
+    .fixedLeft {
+        @include Position($position: fixed, $top: 50px, $left: 0);
+        z-index: 2;
+        button {
+            top: 0;
+            left: 0;
+            width: 65px;
+            height: 220px;
+            z-index: 3;
+        }
+        .fixedLeft-cont {
+            @include Background($sprite: 'dasom-left', $path: 'bg');
+            @include Position($top: 0px, $left: 0);
+            width: 65px;
+            height: 921px;
+            z-index: 2;
+        }
+        .toggle_cont {
+            @include Position($top: 0px, $left: 40px);
+            width: 449px;
+            transition: transform 0.5s;
+            transform: translateX(-1000px);
+            &.on {
+                transform: translateX(0);
+            }
+        }
+    }
+}

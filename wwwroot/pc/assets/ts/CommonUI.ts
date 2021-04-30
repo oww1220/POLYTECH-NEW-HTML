@@ -210,7 +210,7 @@ namespace CommonUI {
         },
     };
     export const event = {
-        toggle(target: string, parent: string, callback?: (logic: () => void, layer: JQuery) => void) {
+        toggle(target: string, parent: string | null, callback?: (logic: () => void, layer: JQuery) => void) {
             $(document).on('click', target, function (e) {
                 const $this = $(this);
                 const $targetDiv = $(target);
@@ -218,7 +218,7 @@ namespace CommonUI {
                 const sort = $this.data('sort');
                 const onClass = $this.data('on');
                 const siblings = $this.data('siblings');
-                const $parent = $(parent);
+                const $parent = $(parent!);
                 //console.log(sort, onClass, siblings, $parent);
 
                 const logic = () => {
@@ -231,6 +231,7 @@ namespace CommonUI {
                                 $targetDiv.removeClass('on');
                                 $parent.removeClass('on');
                             }
+
                             $this.addClass('on');
                             layer.addClass('on');
                         }
