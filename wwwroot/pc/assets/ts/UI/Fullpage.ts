@@ -5,7 +5,7 @@ export {};
 // ---- test code ---- //
 $(() => {
     const $fullpage = $('#fullpage');
-    const $btnTop = $('.fixedRight');
+    const $btnTop = $('.fixedLeft');
     const $header = $('.header');
 
     const fullpageOptions = {
@@ -14,7 +14,7 @@ $(() => {
         lazyLoad: true,
         autoScrolling: true,
         navigation: true,
-        navigationPosition: 'left',
+        navigationPosition: 'right',
         //navigationTooltips: ['INTRO', 'HIT소식', 'WHY HIT', 'HIT 생활', 'HIT SNS'],
         responsiveWidth: 1200,
         afterLoad() {

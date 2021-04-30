@@ -25,6 +25,22 @@
         }
 
         #section1 {
+            .siteMap-layer {
+                transform: translateY(1000px);
+                opacity: 0;
+                animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
+                @include Position($bottom: 0px, $left: 50%);
+                margin-left: -725px;
+                @include Background($sprite: 'sitemap', $position: center center, $path: 'bg');
+                height: 160px;
+                width: 1450px;
+                z-index: 2;
+            }
+            &.active {
+                .siteMap-layer {
+                    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+                }
+            }
             .swiper-container {
                 height: 100%;
                 .swiper-wrapper {
@@ -68,6 +84,13 @@
                 opacity: 0;
                 animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
                 @include Flex-config($justify: center, $align: center, $flow: column);
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                overflow: hidden;
+                @include Position($bottom: 170px, $left: 50%);
+                margin-left: -35px;
+                z-index: 1;
                 &:before {
                     @include Background($sprite: 'scroll_down', $position: center center, $path: 'bg');
                     animation: slide-top 0.5s linear infinite alternate both;
@@ -77,7 +100,6 @@
                     height: 30px;
                     position: relative;
                     z-index: 1;
-                    margin-bottom: 5px;
                 }
                 &:after {
                     @include Position($top: 0px, $left: 0px);
@@ -88,14 +110,9 @@
                     width: 100%;
                     height: 100%;
                 }
-                width: 120px;
-                height: 120px;
-                border-radius: 50%;
-                overflow: hidden;
-                @include Position($bottom: 20px, $left: 50%);
                 span {
                     width: 100%;
-                    display: block;
+                    display: none;
                     text-align: center;
                     position: relative;
                     z-index: 1;
