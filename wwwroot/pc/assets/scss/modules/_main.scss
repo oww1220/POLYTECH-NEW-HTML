@@ -1,160 +1,174 @@
-.main-wrap {
-    img {
-        width: 100%;
-    }
-    .section {
-        position: relative;
-        overflow: hidden;
-        .inner {
-            text-align: center;
-            img {
-                max-width: 100%;
-                width: auto;
-            }
+.corportion {
+    .main-wrap {
+        img {
+            width: 100%;
         }
-    }
-    .section .layout {
-        opacity: 0;
-        transform: translate3d(0, -200px, 0);
-        transition: all 2s ease;
-    }
-    .section.active .layout {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-
-    #section1 {
-        .swiper-container {
-            height: 100%;
-            .swiper-wrapper {
-                height: 100%;
-                .swiper-slide {
-                    position: relative;
-                    height: 100%;
+        .section {
+            position: relative;
+            overflow: hidden;
+            .inner {
+                text-align: center;
+                img {
+                    max-width: 100%;
+                    width: auto;
                 }
             }
         }
-        .swiper-pagination {
-            bottom: auto;
-            top: 10px;
+        .section .layout {
+            opacity: 0;
+            transform: translate3d(0, -200px, 0);
+            transition: all 2s ease;
         }
-        #kopo-video {
-            @include Position($top: 50%, $left: 50%);
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 101%;
-            height: auto;
-            width: auto;
+        .section.active .layout {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
         }
-        .bg {
+
+        #section1 {
+            .swiper-container {
+                height: 100%;
+                .swiper-wrapper {
+                    height: 100%;
+                    .swiper-slide {
+                        position: relative;
+                        height: 100%;
+                    }
+                }
+            }
+            .swiper-pagination {
+                bottom: auto;
+                top: 10px;
+            }
+            #kopo-video {
+                @include Position($top: 50%, $left: 50%);
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 101%;
+                height: auto;
+                width: auto;
+            }
+            .bg {
+                @include Background(
+                    $sprite: 'section1-bg2',
+                    $type: 'jpg',
+                    $position: center center,
+                    $size: contain,
+                    $path: 'bg'
+                );
+                background-color: #61bcf3;
+                @include Position($top: 50%, $left: 50%);
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 101%;
+                height: auto;
+                width: auto;
+            }
+            .scroll-down {
+                transform: translateY(1000px);
+                opacity: 0;
+                animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
+                @include Flex-config($justify: center, $align: center, $flow: column);
+                &:before {
+                    @include Background($sprite: 'scroll_down', $position: center center, $path: 'bg');
+                    animation: slide-top 0.5s linear infinite alternate both;
+                    display: block;
+                    content: '';
+                    width: 20px;
+                    height: 30px;
+                    position: relative;
+                    z-index: 1;
+                    margin-bottom: 5px;
+                }
+                &:after {
+                    @include Position($top: 0px, $left: 0px);
+                    display: block;
+                    content: '';
+                    background: #0a0a0a;
+                    opacity: 0.5;
+                    width: 100%;
+                    height: 100%;
+                }
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                overflow: hidden;
+                @include Position($bottom: 20px, $left: 50%);
+                span {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    position: relative;
+                    z-index: 1;
+                    color: #fff;
+                }
+            }
+            &.active {
+                .scroll-down {
+                    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+                }
+            }
+            .fp-tableCell {
+                padding-top: 170px;
+                box-sizing: border-box;
+            }
+            .seach-layer {
+            }
+        }
+
+        #section2 {
+            .inner {
+                &:before {
+                    display: block;
+                    content: '';
+                    width: 300px;
+                    height: 300px;
+                    @include Background($sprite: 'rollin', $position: center center, $size: cover, $path: 'bg');
+                    @include Position($top: 20px, $left: 0px);
+                    animation: rotate-center 20s linear infinite both;
+                }
+                img {
+                    position: relative;
+                }
+            }
+        }
+
+        #section3 {
             @include Background(
-                $sprite: 'section1-bg2',
+                $sprite: 'section3-bg',
                 $type: 'jpg',
                 $position: center center,
-                $size: contain,
+                $size: cover,
                 $path: 'bg'
             );
-            background-color: #61bcf3;
-            @include Position($top: 50%, $left: 50%);
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 101%;
-            height: auto;
-            width: auto;
-        }
-        .scroll-down {
-            transform: translateY(1000px);
-            opacity: 0;
-            animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
-            @include Flex-config($justify: center, $align: center, $flow: column);
-            &:before {
-                @include Background($sprite: 'scroll_down', $position: center center, $path: 'bg');
-                animation: slide-top 0.5s linear infinite alternate both;
-                display: block;
-                content: '';
-                width: 20px;
-                height: 30px;
-                position: relative;
-                z-index: 1;
-                margin-bottom: 5px;
-            }
-            &:after {
-                @include Position($top: 0px, $left: 0px);
-                display: block;
-                content: '';
-                background: #0a0a0a;
-                opacity: 0.5;
-                width: 100%;
-                height: 100%;
-            }
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            @include Position($bottom: 20px, $left: 50%);
-            span {
-                width: 100%;
-                display: block;
-                text-align: center;
-                position: relative;
-                z-index: 1;
-                color: #fff;
+            .inner {
             }
         }
-        &.active {
-            .scroll-down {
-                animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+        #section4 {
+            @include Background(
+                $sprite: 'section4-bg',
+                $type: 'jpg',
+                $position: center center,
+                $size: cover,
+                $path: 'bg'
+            );
+            .inner {
             }
         }
-        .fp-tableCell {
-            padding-top: 170px;
-            box-sizing: border-box;
+        #section5 {
+            background-color: #f4f7fa;
+            .inner {
+                &.layout {
+                    opacity: 1;
+                }
+                h2 {
+                    margin-bottom: 20px;
+                }
+            }
         }
-        .seach-layer {
-        }
-    }
 
-    #section2 {
-        .inner {
-            &:before {
-                display: block;
-                content: '';
-                width: 300px;
-                height: 300px;
-                @include Background($sprite: 'rollin', $position: center center, $size: cover, $path: 'bg');
-                @include Position($top: 20px, $left: 0px);
-                animation: rotate-center 20s linear infinite both;
+        #footer_section {
+            .inner {
             }
-            img {
-                position: relative;
-            }
-        }
-    }
-
-    #section3 {
-        @include Background($sprite: 'section3-bg', $type: 'jpg', $position: center center, $size: cover, $path: 'bg');
-        .inner {
-        }
-    }
-    #section4 {
-        @include Background($sprite: 'section4-bg', $type: 'jpg', $position: center center, $size: cover, $path: 'bg');
-        .inner {
-        }
-    }
-    #section5 {
-        background-color: #f4f7fa;
-        .inner {
-            &.layout {
-                opacity: 1;
-            }
-            h2 {
-                margin-bottom: 20px;
-            }
-        }
-    }
-
-    #footer_section {
-        .inner {
         }
     }
 }
