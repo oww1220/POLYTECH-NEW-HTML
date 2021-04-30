@@ -10,9 +10,8 @@
     <!--
     <script defer type="text/javascript" src="./assets/scripts/bundle/jquery.bundle.js"></script>-->
     <script defer type="text/javascript" src="../assets/scripts/jquery/jquery-1.9.1.min.js"></script>
-    <!--
-    <script defer type="text/javascript" src="../assets/scripts/jquery/plugins/fullpage.min.js"></script>-->
     <script defer type="text/javascript" src="../assets/scripts/jquery/plugins/jquery.fullpage.min.js"></script>
+    <script defer type="text/javascript" src="../assets/scripts/jquery/plugins/swiper.min.js"></script>
 
     <script defer type="text/javascript" src="../assets/scripts/bundle/UI.bundle.js"></script>
 
@@ -34,11 +33,21 @@
 
             <div id="fullpage">
                 <div class="section" id="section1">
-                    <video loop="" muted="" data-autoplay="" playsinline="" id="kopo-video">
-                        <source src="../assets/video/kopo.mp4" type="video/mp4">
-                    </video>
-                    <!--
-                    <div class="bg"></div>-->
+
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <video loop muted data-autoplay playsinline id="kopo-video">
+                                    <source src="../assets/video/kopo.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bg"></div>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
 
                     <div class="scroll-down">
                         <span>SCROLL DOWN</span>

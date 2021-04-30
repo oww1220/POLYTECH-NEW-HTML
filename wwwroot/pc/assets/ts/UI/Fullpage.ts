@@ -1,4 +1,4 @@
-//import CommonUI from '../CommonUI';
+import CommonUI from '../CommonUI';
 //import * as Const from '../Lib/Const';
 export {};
 
@@ -35,6 +35,21 @@ $(() => {
 
     $btnTop.find('.btn-goTop').on('click', () => {
         $.fn.fullpage.moveTo(1, 1);
+    });
+
+    CommonUI.slide.init('#section1 .swiper-container', 'swiper', {
+        loop: true,
+        pagination: {
+            el: '#section1 .swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 16000,
+            disableOnInteraction: false,
+        },
+        speed: 500,
+        effect: 'fade',
+        pauseOnHover: false,
     });
 
     //ie test es6 method!
