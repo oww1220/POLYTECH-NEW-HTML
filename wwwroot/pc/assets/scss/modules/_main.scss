@@ -25,6 +25,17 @@
         }
 
         #section1 {
+            .search-layer {
+                @include Position($bottom: 170px, $left: 50%);
+                margin-left: 120px;
+                z-index: 2;
+                button {
+                    width: 80px;
+                    right: 31px;
+                    height: 82px;
+                    bottom: 30px;
+                }
+            }
             .siteMap-layer {
                 transition: all 0.5s;
                 transform: translateY(1000px);
