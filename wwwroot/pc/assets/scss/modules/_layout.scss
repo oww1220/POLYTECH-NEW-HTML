@@ -90,7 +90,7 @@
     }
 }
 
-.company {
+.campus {
     .inner {
         max-width: 1600px;
         margin: 0 auto;
@@ -199,7 +199,7 @@
             width: 50%;
             height: 148px;
             @include Position($top: 0, $left: 0);
-            background-color: #cbe8f6;
+            background-color: #38abda;
         }
         &:after {
             display: block;
@@ -207,7 +207,7 @@
             width: 50%;
             height: 148px;
             @include Position($top: 0, $right: 0);
-            background-color: #daeef7;
+            background-color: #44afdb;
         }
         .inner {
             position: relative;
@@ -222,10 +222,12 @@
         min-width: 1920px;
     }
     .footer {
-        @include Background($sprite: 'footer-bg', $type: 'jpg', $path: 'bg');
-        background-repeat: repeat-x;
         min-width: 1920px;
         text-align: center;
+        .footer-cont {
+            @include Background($sprite: 'footer-bg', $type: 'jpg', $path: 'bg');
+            background-repeat: repeat-x;
+        }
     }
     .fixedLeft {
         @include Position($position: fixed, $top: 50px, $left: 0);

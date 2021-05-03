@@ -90,7 +90,7 @@ $(() => {
             clickable: true,
         },
         autoplay: {
-            delay: 16000,
+            delay: 70000,
             disableOnInteraction: false,
         },
         speed: 500,

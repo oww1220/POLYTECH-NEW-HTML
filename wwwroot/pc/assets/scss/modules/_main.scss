@@ -208,7 +208,7 @@
     }
 }
 
-.company {
+.campus {
     .main-wrap {
         img {
             width: 100%;
@@ -413,6 +413,17 @@
 
 .dasom {
     .main-wrap {
+        &:after {
+            display: block;
+            content: '';
+            @include Position($top: 1480px, $left: 50%);
+            @include Background($sprite: 'dasom-ribon', $position: center center, $path: 'bg', $size: 122%);
+            width: 1920px;
+            height: 1265px;
+            margin-left: -1003px;
+            pointer-events: none;
+        }
+
         .section {
             position: relative;
         }
@@ -450,6 +461,7 @@
                 @include Flex-config($justify: space-around, $align: center);
                 width: 1200px;
                 > li {
+                    position: relative;
                     width: 310px;
                     height: 310px;
                     overflow: hidden;
@@ -465,10 +477,25 @@
                             max-width: initial;
                         }
                         &:hover {
-                            transform: scale(1.05);
+                            transform: scale(1.1);
                         }
                     }
+                    span {
+                        @include Position($top: 46%, $left: 0);
+                        display: block;
+                        color: #fff;
+                        font-size: 24px;
+                        width: 100%;
+                        text-align: center;
+                        pointer-events: none;
+                    }
                 }
+            }
+        }
+        #section4 {
+            z-index: 2;
+            .inner {
+                max-width: 1438px;
             }
         }
     }
