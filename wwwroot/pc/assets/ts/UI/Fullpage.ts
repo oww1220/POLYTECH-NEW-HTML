@@ -89,10 +89,12 @@ $(() => {
 
     CommonUI.slide.init('#section1 .swiper-container', 'swiper', {
         loop: true,
+        pagination: false,
+        /*
         pagination: {
             el: '#section1 .swiper-pagination',
             clickable: true,
-        },
+        },*/
         autoplay: {
             delay: 70000,
             disableOnInteraction: false,
@@ -100,6 +102,7 @@ $(() => {
         speed: 500,
         effect: 'fade',
         pauseOnHover: false,
+        allowTouchMove: false,
     });
 
     $siteMapLayer.find('button').on('click', siteMapLayerHandler);

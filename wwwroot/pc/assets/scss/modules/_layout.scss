@@ -308,7 +308,7 @@ body.fixed {
     height: 100%;
     background-color: #000;
     font: 0/0 a;
-    opacity: 0.5;
+    opacity: 0.8;
     z-index: 100;
     display: none;
 }
@@ -320,10 +320,10 @@ body.fixed {
     &.layer-common {
         max-width: 1300px;
         button {
-            @include Position($top: 35px, $right: 75px);
+            @include Position($top: 35px, $right: 57px);
             @include Hide_txt;
-            width: 56px;
-            height: 56px;
+            width: 60px;
+            height: 60px;
         }
         .step2,
         .step3,

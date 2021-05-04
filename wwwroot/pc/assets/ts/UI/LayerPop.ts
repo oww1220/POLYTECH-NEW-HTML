@@ -14,23 +14,23 @@ $(() => {
 
                     <div class="hasmap-wrap step step1 ">
                         <img src="../assets/images/search-layer1.png" alt="">
-                        <button class="step2-open" type="button" style="width: 70px;height: 340px;top:420px;left: 200px;">열기</button>
+                        <button class="step2-open" type="button" style="width: 70px;height: 340px;top:350px;left: 200px;">열기</button>
                     </div>
                     <div class="hasmap-wrap step step2">
                         <img src="../assets/images/search-layer2.png" alt="">
-                        <button class="step3-open" type="button" style="width: 140px;height: 340px;top:420px;left: 382px;">열기</button>
+                        <button class="step3-open" type="button" style="width: 140px;height: 340px;top:350px;left: 382px;">열기</button>
                     </div>
                     <div class="hasmap-wrap step step3">
                         <img src="../assets/images/search-layer3.png" alt="">
-                        <button class="step4-open" type="button" style="width: 140px;height: 340px;top:420px;left: 555px;">열기</button>
+                        <button class="step4-open" type="button" style="width: 140px;height: 340px;top:350px;left: 555px;">열기</button>
                     </div>
                     <div class="hasmap-wrap step step4">
                         <img src="../assets/images/search-layer4.png" alt="">
                     </div>
                     
-                    
+                    <button type="button" class="layer_close_bt" id="layer_close1" data-layer="layer-common">닫기</button>	
+
                 </div>
-                <button type="button" class="layer_close_bt" id="layer_close1" data-layer="layer-common">닫기</button>	
                 
             </div>
         </div>
