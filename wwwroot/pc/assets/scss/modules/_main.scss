@@ -453,6 +453,17 @@
 
         #section3 {
             .inner {
+                button {
+                    width: 30%;
+                    height: 5%;
+                    left: 9%;
+                    bottom: 5%;
+                }
+                .step1 {
+                }
+                .step2 {
+                    display: none;
+                }
             }
         }
         #section4 {
