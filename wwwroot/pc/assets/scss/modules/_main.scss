@@ -530,7 +530,7 @@
             }
         }
         #section4 {
-            @include Background($sprite: 'dasom-ribon', $position: center -410px, $path: 'bg', $size: 100%);
+            @include Background($sprite: 'dasom-ribon', $position: center center, $path: 'bg', $size: 100%);
             z-index: 2;
             .inner {
                 max-width: 1438px;
