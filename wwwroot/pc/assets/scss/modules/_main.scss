@@ -435,6 +435,7 @@
 
 .dasom {
     .main-wrap {
+        /*
         &:after {
             display: block;
             content: '';
@@ -444,12 +445,26 @@
             height: 1265px;
             margin-left: -1003px;
             pointer-events: none;
+        }*/
+        .section .layout {
+            opacity: 0;
+            transform: translate3d(0, -200px, 0);
+            transition: all 2s ease;
         }
-
+        .section.active .layout {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
         .section {
             position: relative;
+            overflow: hidden;
         }
         #section1 {
+            background-color: #f3f3f3;
+            .fp-tableCell {
+                padding-top: 170px;
+                box-sizing: border-box;
+            }
             &:before {
                 display: block;
                 content: '';
@@ -525,7 +540,7 @@
 
 .intro {
     .main-wrap {
-        padding: 30px 0 60px;
+        padding: 20px 0 20px;
         @include Background($sprite: 'intro-bg', $position: center center, $path: 'bg', $size: cover);
         button {
             width: 440px;

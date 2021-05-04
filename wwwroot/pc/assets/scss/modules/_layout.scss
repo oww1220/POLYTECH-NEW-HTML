@@ -202,7 +202,10 @@
         position: relative;
     }
     .header {
+        @include Position($position: fixed, $top: 0, $left: 0);
+        width: 100%;
         min-width: 1920px;
+        z-index: 2;
         &:before {
             display: block;
             content: '';
@@ -241,7 +244,7 @@
     }
     .fixedLeft {
         @include Position($position: fixed, $top: 50px, $left: 0);
-        z-index: 2;
+        z-index: 222;
         button {
             top: 0;
             left: 0;
