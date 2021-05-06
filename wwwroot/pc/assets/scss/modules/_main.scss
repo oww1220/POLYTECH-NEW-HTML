@@ -27,11 +27,10 @@
         #section1 {
             .search-layer {
                 @include Flex-config($justify: flex-end, $align: center);
-                overflow: hidden;
                 border-radius: 10px;
-                width: 80px;
-                @include Position($bottom: 400px, $left: 50%);
-                margin-left: 570px;
+                width: 140px;
+                @include Position($bottom: 20px, $left: 50%);
+                margin-left: 690px;
                 cursor: pointer;
                 z-index: 2;
                 button {
@@ -42,23 +41,27 @@
                     z-index: 2;
                 }
                 .search-cont {
-                    @include Position($top: 0px, $right: 0);
-                    width: 530px;
-                    opacity: 0;
-                    transition: opacity 0.5s;
+                    @include Position($top: 0px, $right: 100px);
+                    width: 1px;
+                    height: 140px;
+                    transition: all 0.5s;
+                    overflow: hidden;
+                    img {
+                        width: auto;
+                        max-width: initial;
+                    }
                 }
                 .search-bt {
                     @include Background($sprite: 'bt-search', $position: 0 0);
-                    width: 80px;
-                    height: 80px;
+                    width: 140px;
+                    height: 140px;
                     position: relative;
                     z-index: 1;
                 }
 
                 &:hover {
-                    overflow: visible;
                     .search-cont {
-                        opacity: 1;
+                        width: 970px;
                     }
                 }
             }
@@ -69,8 +72,8 @@
                 animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
                 @include Position($bottom: 20px, $left: 50%);
                 margin-left: -725px;
-                @include Background($sprite: 'sitemap', $position: -23px -23px, $path: 'bg');
-                height: 125px;
+                @include Background($sprite: 'sitemap', $position: -23px -20px, $path: 'bg');
+                height: 140px;
                 width: 1400px;
                 z-index: 2;
                 overflow: hidden;
@@ -274,11 +277,10 @@
         #section1 {
             .search-layer {
                 @include Flex-config($justify: flex-end, $align: center);
-                overflow: hidden;
                 border-radius: 10px;
-                width: 80px;
-                @include Position($bottom: 400px, $left: 50%);
-                margin-left: 570px;
+                width: 140px;
+                @include Position($bottom: 20px, $left: 50%);
+                margin-left: 690px;
                 cursor: pointer;
                 z-index: 2;
                 button {
@@ -289,23 +291,27 @@
                     z-index: 2;
                 }
                 .search-cont {
-                    @include Position($top: 0px, $right: 0);
-                    width: 530px;
-                    opacity: 0;
-                    transition: opacity 0.5s;
+                    @include Position($top: 0px, $right: 100px);
+                    width: 1px;
+                    height: 140px;
+                    transition: all 0.5s;
+                    overflow: hidden;
+                    img {
+                        width: auto;
+                        max-width: initial;
+                    }
                 }
                 .search-bt {
                     @include Background($sprite: 'bt-search', $position: 0 0);
-                    width: 80px;
-                    height: 80px;
+                    width: 140px;
+                    height: 140px;
                     position: relative;
                     z-index: 1;
                 }
 
                 &:hover {
-                    overflow: visible;
                     .search-cont {
-                        opacity: 1;
+                        width: 970px;
                     }
                 }
             }
@@ -317,7 +323,7 @@
                 @include Position($bottom: 20px, $left: 50%);
                 margin-left: -725px;
                 @include Background($sprite: 'sitemap', $position: -23px -23px, $path: 'bg');
-                height: 125px;
+                height: 140px;
                 width: 1400px;
                 z-index: 2;
                 overflow: hidden;
