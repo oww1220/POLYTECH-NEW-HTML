@@ -516,13 +516,25 @@
             pointer-events: none;
         }*/
         .section .layout {
-            opacity: 0;
-            transform: translate3d(0, -200px, 0);
-            transition: all 2s ease;
+            //opacity: 0;
+            //transform: translate3d(0, -200px, 0);
+            //transition: all 2s ease;
         }
         .section.active .layout {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
+            //opacity: 1;
+            //transform: translate3d(0, 0, 0);
+        }
+        > div {
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1265px;
+                @include Background($sprite: 'dasom-ribon', $position: center bottom, $path: 'bg', $size: auto);
+                @include Position($top: 1346px, $left: 0);
+                pointer-events: none;
+                z-index: 2;
+            }
         }
         .section {
             position: relative;
@@ -599,8 +611,8 @@
             }
         }
         #section4 {
-            @include Background($sprite: 'dasom-ribon', $position: center center, $path: 'bg', $size: 100%);
-            z-index: 2;
+            //@include Background($sprite: 'dasom-ribon', $position: 0 100%, $path: 'bg', $size: 100%);
+            z-index: 3;
             .inner {
                 max-width: 1438px;
             }
